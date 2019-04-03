@@ -1,0 +1,13 @@
+<?php
+    $con = mysqli_connect('localhost','root','');
+
+    mysqli_select_db($con,'registration');
+
+    $sql = "DELETE FROM users WHERE id = '$_GET[id]'";
+
+if(mysqli_query($con,$sql))
+    header("refresh:1;url=viewuser.php");
+else
+    echo"Not deleted";
+
+?>
